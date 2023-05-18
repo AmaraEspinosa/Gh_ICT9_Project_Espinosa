@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ICT PROJECT 9</title>
+<style>
+	 table {
+	  border-collapse: collapse;
+	  border-radius: 10px;
+	  overflow: hidden;
+	}
+	.center td, .center tr {
+	 padding: 20px;
+	 color:    white;
+ 	 background-color: #1A2339 ;
+	}
+	  body {
+	  background-color:#394670;
+	  font-family: Raleway;
+	  text-align: center;
+	  margin: auto;
+	  color:  white;
+	  }
+	  * {
+	      text-align: center;
+	      margin: auto; 
+	 }
+	 button {
+	 		background-color: #3546B3;
+	         color: white;
+	         padding: 8px 16px;
+	         border: none;
+	         border-radius: 2px;
+	         cursor: pointer;
+	         font-size:  14px;
+	      }
+	  #result-image{
+	  bdisplay: none;
+	  }
+	  button:hover{
+	  	background-color: #1F2A78;
+	  }
+</style>
+</head>
+<body>
+<br><br><br><br><br>
+<table class="center">
+<tr><td><h1>Millimeter Converter </h1></td></tr>
+<tr><td><h3>A little magic working for you.. ✨</h3></td></tr><br>
+<tr><td><p>Type Desired Value (mm) <input type="text" id="millimeters"></p></td></tr><br><br>
+<tr><td><img src="https://em-content.zobj.net/source/skype/289/magic-wand_1fa84.png" id="result-image" width="50px" height="50px"></td></tr>
+<tr><td>The Converted Value is <input type="text" id="answer-box">
+<tr><td><br> <button type="button" onclick="mm2cm()">Convert to Centimeters</button>
+           <button type="button"onclick="mm2m()">Convert to Meters</button>
+            <button type="button" onclick="mm2km ()">Convert to Kilometers</button> </td></tr>
+</table>
+</body>
+<script>
+function mm2cm() {
+  var x = (document.getElementById('millimeters').value);
+  var answer = x / 10;
+  document.getElementById('answer-box').value = answer + " CM";
+  var resultImage = document.getElementById('result-image');
+  resultImage.style.display = answer ? "inline-block" : "none";
+}
+
+function mm2m() {
+  var x = (document.getElementById('millimeters').value);
+  var answer = x / 1000;
+  document.getElementById('answer-box').value = answer + " M";
+  var resultImage = document.getElementById('result-image');
+  resultImage.style.display = answer ? "inline-block" : "none";
+}
+
+function mm2km() {
+  var x = (document.getElementById('millimeters').value);
+  var answer = x / 1e+6;
+  document.getElementById('answer-box').value = answer + " KM";
+  var resultImage = document.getElementById('result-image');
+  resultImage.style.display = answer ? "inline-block" : "none";
+}
+var millimetersInput = document.getElementById('millimeters');
+millimetersInput.addEventListener('input', function() {
+  var x = parseFloat(millimetersInput.value);
+  var resultImage = document.getElementById('result-image');
+  resultImage.style.display = "none" 
+});
+</script>
+</html>
